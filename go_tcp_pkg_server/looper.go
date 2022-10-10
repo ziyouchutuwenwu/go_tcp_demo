@@ -1,18 +1,18 @@
 package go_tcp_pkg_server
 
 import (
-	"github.com/gogf/gf/net/gtcp"
+	"github.com/gogf/gf/v2/net/gtcp"
 	"io"
 	"strings"
 )
 
-func looper(conn *gtcp.Conn){
+func looper(conn *gtcp.Conn) {
 	OnConnected(conn)
 	defer conn.Close()
 
 	for {
 		data, err := conn.RecvPkg(gtcp.PkgOption{HeaderSize: 2})
-		if err == nil{
+		if err == nil {
 			OnData(conn, data)
 		}
 		if err != nil {

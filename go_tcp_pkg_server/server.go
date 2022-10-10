@@ -1,10 +1,10 @@
 package go_tcp_pkg_server
 
 import (
-	"github.com/gogf/gf/net/gtcp"
+	"github.com/gogf/gf/v2/net/gtcp"
 )
 
-func Send(conn *gtcp.Conn, data []byte){
+func Send(conn *gtcp.Conn, data []byte) {
 	SetSendDeadline(conn, 1)
 	conn.SendPkg(data, gtcp.PkgOption{HeaderSize: 2})
 }

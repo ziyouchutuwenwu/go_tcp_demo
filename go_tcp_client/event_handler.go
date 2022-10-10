@@ -2,28 +2,27 @@ package go_tcp_client
 
 import (
 	"fmt"
-	"github.com/gogf/gf/net/gtcp"
+	"github.com/gogf/gf/v2/net/gtcp"
 )
 
-func OnConnected(conn *gtcp.Conn){
+func OnConnected(conn *gtcp.Conn) {
 	//SetRecvDeadline(conn, 2)
 
 	fmt.Println("OnConnected")
 }
 
-func OnData(conn *gtcp.Conn, data []byte){
+func OnData(conn *gtcp.Conn, data []byte) {
 	fmt.Println("OnData ", data)
 }
 
-func OnServerKicked(conn *gtcp.Conn){
+func OnServerKicked(conn *gtcp.Conn) {
 	fmt.Println("OnServerKicked")
 }
 
-func OnClientDisconected(conn *gtcp.Conn){
+func OnClientDisconected(conn *gtcp.Conn) {
 	fmt.Println("OnClientDisconected")
 }
 
-func OnTimeOut(conn *gtcp.Conn){
+func OnTimeOut(conn *gtcp.Conn) {
 	fmt.Println("OnTimeOut")
 }
-
